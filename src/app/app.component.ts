@@ -1,10 +1,20 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { CmLanguagesEnum } from './enums/common';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: 'app.component.html',
+  styles: []
 })
 export class AppComponent {
-  title = 'ComponentsMarket';
+
+  constructor(private translateService: TranslateService) {
+    translateService.addLangs([CmLanguagesEnum.ENG, CmLanguagesEnum.RUS]);
+    translateService.setDefaultLang(CmLanguagesEnum.ENG);
+
+    const browserLang = translateService.getBrowserLang();
+    // translateService.use(browserLang.match(/en|ru/) ? browserLang : 'ru');
+    translateService.use(CmLanguagesEnum.ENG);
+  }
 }
