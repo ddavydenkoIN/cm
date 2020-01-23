@@ -1,0 +1,57 @@
+:host {
+  overflow: hidden;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: repeat(8, 1fr);
+
+  .cm-banner1 {
+    &__bottom {
+      grid-column: 1 / span 3;
+      grid-row: 5/ span 4;
+      z-index: 1;
+      background-image: url("../../../../../assets/img/elements/banners/banner1/black_background.jpeg");
+    }
+
+    &__top {
+      grid-column: 1 / span 3;
+      grid-row: 1 / span 4;
+      z-index: 1;
+      background-color: white;
+    }
+    &__center {
+      grid-column: 2;
+      grid-row: 2 / span 6;
+      z-index: 99;
+      padding: 20px;
+      background-color: white;
+      border: 5px solid black;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+
+      &-quotes img {
+        width: 30px;
+      }
+      &-text {
+        text-align: center;
+        font-size: larger;
+        font-family: auto;
+      }
+      &-sub {
+        margin-top: 1em;
+        font-size: smaller;
+      }
+      &-signature {
+        font-size: medium;
+        font-family: cursive;
+        font-style: italic;
+      }
+    }
+  }
+
+}
