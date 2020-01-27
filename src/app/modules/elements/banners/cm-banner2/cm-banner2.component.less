@@ -7,7 +7,8 @@
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(10, 1fr);
 
-  background: url("../../../../../assets/img/elements/banners/banner2/tree-background.jpg") center;
+  background: url("/assets/img/elements/banners/banner2/grey_background.jpg");
+  background-size: cover;
 
   .cm-banner2 {
     &__frame {
@@ -16,6 +17,18 @@
       grid-column: 2 / span 8;
       grid-row: 2 / span 8;
       border: 2px solid black;
+
+      display: flex;
+      padding: 10% 10% 5% 10%;
+      flex-direction: column;
+      justify-content: flex-end;
+      font-size: xx-large;
+
+      &-text {
+        font-size: 1.6em;
+        text-align: center;
+        color: white;
+      }
     }
 
     &__signature {
@@ -33,7 +46,10 @@
         text-transform: uppercase;
         transform: rotate(270deg);
         width: max-content;
-        size: 0.5em;
+        font-size: 0.5em;
+        align-self: center;
+        text-indent: 20px;
+        letter-spacing: 2px;
       }
     }
   }

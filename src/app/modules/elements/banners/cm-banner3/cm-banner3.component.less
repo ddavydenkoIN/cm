@@ -1,0 +1,89 @@
+:host {
+  display: grid;
+  height: 100%;
+
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 8fr 1fr;
+
+  background: url("/assets/img/elements/banners/banner3/france.jpg") right;
+  background-size: cover;
+  background-position-x: left;
+
+  position: relative;
+
+  .cm-banner3 {
+    &__box1 {
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 10;
+      background-color: white;
+      z-index: 2;
+    }
+    &__box2 {
+      grid-column: 3;
+      grid-row: 1 / span 10;
+      border-style: solid;
+      border-width: 90px 3px 0px 0px;
+      border-color: white;
+      z-index: 2;
+
+      &::before {
+        background-color: #000;
+        content: "";
+        display: inline-block;
+        height: 4px;
+        position: relative;
+        top: 65%;
+      }
+      &::before {
+        width: 100%;
+        margin-left: -100%;
+      }
+    }
+    &__box3 {
+      grid-column: 4;
+      grid-row: 1 / span 10;
+      border-style: solid;
+
+      border-width: 0px 0px 90px 0px;
+      border-color: white;
+      z-index: 2;
+      &::before {
+        background-color: black;
+        content: "";
+        display: inline-block;
+        height: 4px;
+        position: relative;
+        top: 87%;
+        left: -3px;
+        width: 35%;
+      }
+    }
+
+    &__text {
+      &-top {
+        grid-column: 1 / span 3;
+        grid-row: 2;
+        color: black;
+        text-indent: 15%;
+        z-index: 3;
+        font-variant-caps: all-small-caps;
+        font-weight: bold;
+        font-size: small;
+        font-family: monospace;
+        letter-spacing: 2px;
+      }
+      &-center {
+        z-index: 3;
+        grid-row: 2;
+        grid-column: 1 / span 4;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        font-variant: small-caps;
+        font-size: 80px;
+        color: black;
+      }
+    }
+  }
+}
