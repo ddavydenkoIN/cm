@@ -1,0 +1,56 @@
+:host {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  overflow: hidden;
+
+  background-image: url("/assets/img/elements/banners/banner1/black_background.jpeg");
+  background-size: cover;
+
+  .cm-banner4 {
+    &__center-text {
+      color: white;
+      font-size: 3em;
+      font-family: cursive;
+    }
+
+    &__top-text {
+      color: white;
+      margin: 10% 0px 0px 0px;
+      font-size: larger;
+      font-family: monospace;
+      font-variant-caps: small-caps;
+      font-weight: bolder;
+      letter-spacing: 1px;
+    }
+    &__bottom-text {
+      color: white;
+      margin: 0px 0px 10% 0px;
+      position: relative;
+      font-family: monospace;
+      text-indent: 2px;
+      font-variant-caps: small-caps;
+      font-weight: bold;
+
+      &::before, &::after {
+        content: "";
+        height: 3px;
+        background-color: white;
+        display: inline-block;
+        position: absolute;
+        width: 200%;
+        top: 50%;
+      }
+      &::before {
+        right: 110%;
+      }
+      &::after {
+        left: 110%;
+      }
+    }
+  }
+}
