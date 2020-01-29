@@ -5,6 +5,7 @@ import { CmBanner2Module } from "./cm-banner2/cm-banner2.module";
 import { CmBanner3Module } from './cm-banner3/cm-banner3.module';
 import { CmBanner4Module } from './cm-banner4/cm-banner4.module';
 import { CmBanner5Module } from "./cm-banner5/cm-banner5.module";
+import { CmBanner6Module } from './cm-banner6/cm-banner6.module';
 
 const BANNER_MODULES = [
   CmBanner1Module,
@@ -12,6 +13,7 @@ const BANNER_MODULES = [
   CmBanner3Module,
   CmBanner4Module,
   CmBanner5Module,
+  CmBanner6Module
 ];
 
 @NgModule({
