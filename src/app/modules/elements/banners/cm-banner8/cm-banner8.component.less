@@ -1,0 +1,76 @@
+:host {
+  display: grid;
+  background-color: blue;
+  height: 100%;
+
+  grid-template-rows: 1fr 25px 2fr 2fr 25px 1fr;
+  grid-template-columns: 1fr 25px 2fr 2fr 25px 1fr;
+
+  .cm-banner8 {
+    &__right {
+      grid-column: 4 / span 4;
+      grid-row: 1 / span 7;
+      background-image: url("/assets/img/elements/banners/banner8/black-white-photo.jpg");
+      background-size: cover;
+      background-position: bottom;
+
+      z-index: 3;
+    }
+
+    &__left {
+      grid-column: 1 / span 3;
+      grid-row: 1 / span 7;
+      background-color: white;
+
+      z-index: 1;
+    }
+
+    &__center {
+
+      &-outer {
+        grid-column: 2 / span 4;
+        grid-row: 2 / span 4;
+
+        background-color: #cdcdcd;
+        z-index: 2;
+        border-radius: 50%;
+      }
+      &-inner {
+        grid-column: 3 / span 2;
+        grid-row: 3 / span 2;
+        background-color: black;
+        z-index: 4;
+        border-radius: 50%;
+
+        display: flex;
+        flex-direction: column;
+        color: white;
+        align-items: center;
+        justify-content: space-evenly;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-variant: all-small-caps;
+        text-align: center;
+
+        &_text {
+          &-line {
+            width: 40px;
+            height: 1px;
+            background-color: white;
+          }
+          &-bottom {
+            font-size: small;
+          }
+          &-center {
+            font-size: x-large;
+          }
+          &-top {
+            font-size: x-small;
+          }
+        }
+      }
+
+
+    }
+  }
+}
