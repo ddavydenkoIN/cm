@@ -1,0 +1,6 @@
+<div class="cm-actions-container"
+    (mouseenter)="toggleActions()"
+    (mouseleave)="toggleActions()">
+  <ng-content></ng-content>
+  <div [hidden]="!isShow" class="cm-actions-container__body">Some test text</div>
+</div>
