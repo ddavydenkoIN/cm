@@ -2,5 +2,5 @@
     (mouseenter)="toggleActions()"
     (mouseleave)="toggleActions()">
   <ng-content></ng-content>
-  <div [hidden]="!isShow" class="cm-actions-container__body">Some test text</div>
+  <div [@showHide]="isShow ? 'show' : 'hide'" class="cm-actions-container__body">Some test text</div>
 </div>

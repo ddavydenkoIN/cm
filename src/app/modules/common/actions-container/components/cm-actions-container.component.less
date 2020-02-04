@@ -3,42 +3,12 @@
   position: relative;
 
   .cm-actions-container {
+    height: inherit;
+
     &__body {
       position: absolute;
-      height: 100%;
-      width: 100%;
-      top: 0px;
-      left: 0px;
-      background-color: red;
       z-index: 100;
-      animation: fadeIn 2s;
     }
   }
 }
-.keyframes(@name, @rules) {
 
-  @-webkit-keyframes @name {
-    @rules();
-  }
-
-  @-moz-keyframes @name {
-    @rules();
-  }
-
-  @-ms-keyframes @name {
-    @rules();
-  }
-
-  @-o-keyframes @name {
-    @rules();
-  }
-
-  @keyframes @name {
-    @rules();
-  }
-}
-
-.keyframes(fadeIn, {
-  from { opacity: 0}
-  to   { opacity: 1}
-});
