@@ -1,6 +1,11 @@
 <div class="cm-banners__container">
-  <cm-actions-container class="cm-banners__container-banner">
-    <cm-banner1></cm-banner1>
+  <cm-actions-container [@flyInTrigger]="'in'" class="cm-banners__container-banner">
+    <cm-banner1 [backgroundImages]="{primary: '/assets/img/elements/banners/banner1/quote.icon.png'}"
+                [text1]="'DEFAULT_TEXT_SHORT'"
+                [text2]="'Sincere'"
+                [text3]="'Mr. Smith'"
+    >
+    </cm-banner1>
   </cm-actions-container>
   <div class="cm-banners__container-banner">
     <cm-banner2></cm-banner2>

@@ -12,18 +12,17 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
         left: '0px',
         height: '100%',
         width: '100%',
-        'z-index': 100,
         'background-color': 'red',
       })),
       state('hide', style({
-        width: '100%',
+        opacity: 0,
         bottom: '0px',
         left: '0px',
-        })),
+      })),
       transition('hide <=> show', [
         animate('1s')
       ]),
-    ]),
+    ])
   ]
 })
 export class CmActionsContainerComponent implements OnInit {

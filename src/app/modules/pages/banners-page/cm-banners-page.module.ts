@@ -11,7 +11,7 @@ import { CmActionsContainerModule } from '../../common/actions-container/cm-acti
     CommonModule,
     CmBannersModule,
     CmBannersRoutingModule,
-    CmActionsContainerModule
+    CmActionsContainerModule,
   ],
   exports: [CmBannersPageComponent],
 })

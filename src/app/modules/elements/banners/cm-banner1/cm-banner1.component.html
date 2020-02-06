@@ -2,13 +2,13 @@
 <div class="cm-banner1__bottom"></div>
 <div class="cm-banner1__center">
   <div class="cm-banner1__center-quotes">
-    <img src="/assets/img/elements/banners/banner1/quote.icon.png"/>
+    <img [src]="backgroundImages.primary"/>
   </div>
   <div class="cm-banner1__center-text">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
+    {{text1 | translate}}
   </div>
-  <div class="cm-banner1__center-sub">Sincere</div>
-  <div class="cm-banner1__center-signature">Mr. Smith</div>
+  <div class="cm-banner1__center-sub">{{text2 | translate}}</div>
+  <div class="cm-banner1__center-signature">{{text3 | translate}}</div>
 </div>
 
 
