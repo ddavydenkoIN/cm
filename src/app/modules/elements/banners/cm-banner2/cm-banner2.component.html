@@ -1,6 +1,9 @@
-<div class="cm-banner2__frame">
-  <div class="cm-banner2__frame-text">One moment of life</div>
-</div>
-<div class="cm-banner2__signature">
-  <span class="cm-banner2__signature-text">inspiring text</span>
+<div class="cm-banner2"
+     [style.background-image]="'url(' + backgroundImages?.primary + ')'">
+  <div class="cm-banner2__frame">
+    <div class="cm-banner2__frame-text">{{text?.text1}}</div>
+  </div>
+  <div class="cm-banner2__signature">
+    <span class="cm-banner2__signature-text">{{text?.text2}}</span>
+  </div>
 </div>

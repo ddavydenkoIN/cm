@@ -13,8 +13,8 @@ export class AppComponent {
     translateService.addLangs([CmLanguagesEnum.ENG, CmLanguagesEnum.RUS]);
     translateService.setDefaultLang(CmLanguagesEnum.ENG);
 
-    const browserLang = translateService.getBrowserLang();
-    translateService.use(browserLang.match(/en|ru/) ? browserLang : 'en');
+    // const browserLang = translateService.getBrowserLang();
+    // translateService.use(browserLang.match(/en|ru/) ? browserLang : 'en');
     translateService.use(CmLanguagesEnum.ENG);
   }
 }

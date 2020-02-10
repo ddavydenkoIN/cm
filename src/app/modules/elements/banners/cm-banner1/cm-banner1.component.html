@@ -2,13 +2,13 @@
 <div class="cm-banner1__bottom"></div>
 <div class="cm-banner1__center">
   <div class="cm-banner1__center-quotes">
-    <img [src]="backgroundImages.primary"/>
+    <img *ngIf="images" [src]="images?.url1"/>
   </div>
   <div class="cm-banner1__center-text">
-    {{text1 | translate}}
+    {{text?.text1}}
   </div>
-  <div class="cm-banner1__center-sub">{{text2 | translate}}</div>
-  <div class="cm-banner1__center-signature">{{text3 | translate}}</div>
+  <div class="cm-banner1__center-sub">{{text?.text2}}</div>
+  <div class="cm-banner1__center-signature">{{text?.text3}}</div>
 </div>
 
 

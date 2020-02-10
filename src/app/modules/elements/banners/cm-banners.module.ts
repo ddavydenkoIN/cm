@@ -8,6 +8,14 @@ import { CmBanner5Module } from "./cm-banner5/cm-banner5.module";
 import { CmBanner6Module } from './cm-banner6/cm-banner6.module';
 import { CmBanner7Module } from './cm-banner7/cm-banner7.module';
 import { CmBanner8Module } from './cm-banner8/cm-banner8.module';
+import { CmBanner1Component } from "./cm-banner1/cm-banner1.component";
+import { CmBanner7Component } from "./cm-banner7/cm-banner7.component";
+import { CmBanner8Component } from "./cm-banner8/cm-banner8.component";
+import { CmBanner6Component } from "./cm-banner6/cm-banner6.component";
+import { CmBanner5Component } from "./cm-banner5/cm-banner5.component";
+import { CmBanner4Component } from "./cm-banner4/cm-banner4.component";
+import { CmBanner3Component } from "./cm-banner3/cm-banner3.component";
+import { CmBanner2Component } from "./cm-banner2/cm-banner2.component";
 
 const BANNER_MODULES = [
   CmBanner1Module,
@@ -18,6 +26,17 @@ const BANNER_MODULES = [
   CmBanner6Module,
   CmBanner7Module,
   CmBanner8Module,
+];
+
+export const BANNERS_LIST = [
+  CmBanner1Component,
+  CmBanner2Component,
+  CmBanner3Component,
+  CmBanner4Component,
+  CmBanner5Component,
+  CmBanner6Component,
+  CmBanner7Component,
+  CmBanner8Component,
 ];
 
 @NgModule({

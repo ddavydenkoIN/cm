@@ -8,19 +8,19 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   animations: [
     trigger('showHide', [
       state('show', style({
-        top: '0px',
-        left: '0px',
-        height: '100%',
+        bottom: '0px',
+        height: '20%',
         width: '100%',
+        opacity: 0.5,
         'background-color': 'red',
       })),
       state('hide', style({
         opacity: 0,
         bottom: '0px',
-        left: '0px',
+        width: '100%',
       })),
       transition('hide <=> show', [
-        animate('1s')
+        animate('0.5s')
       ]),
     ])
   ]

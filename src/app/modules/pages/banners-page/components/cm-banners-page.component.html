@@ -1,31 +1,7 @@
 <div class="cm-banners__container">
-  <cm-actions-container [@flyInTrigger]="'in'" class="cm-banners__container-banner">
-    <cm-banner1 [backgroundImages]="{primary: '/assets/img/elements/banners/banner1/quote.icon.png'}"
-                [text1]="'DEFAULT_TEXT_SHORT'"
-                [text2]="'Sincere'"
-                [text3]="'Mr. Smith'"
-    >
-    </cm-banner1>
-  </cm-actions-container>
-  <div class="cm-banners__container-banner">
-    <cm-banner2></cm-banner2>
-  </div>
-  <div class="cm-banners__container-banner">
-    <cm-banner3></cm-banner3>
-  </div>
-  <div class="cm-banners__container-banner">
-    <cm-banner4></cm-banner4>
-  </div>
-  <div class="cm-banners__container-banner">
-    <cm-banner5></cm-banner5>
-  </div>
-  <div class="cm-banners__container-banner">
-    <cm-banner6></cm-banner6>
-  </div>
-  <div class="cm-banners__container-banner">
-    <cm-banner7></cm-banner7>
-  </div>
-  <div class="cm-banners__container-banner">
-    <cm-banner8></cm-banner8>
-  </div>
+  <ng-container *ngFor="let banner of bannerList">
+    <cm-actions-container [@flyInTrigger]="'in'" class="cm-banners__container-banner">
+      <ng-template #bannerContainers></ng-template>
+    </cm-actions-container>
+  </ng-container>
 </div>

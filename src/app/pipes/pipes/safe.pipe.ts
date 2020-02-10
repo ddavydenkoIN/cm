@@ -1,10 +1,10 @@
-import { Pipe } from "@angular/core";
+import { Pipe, PipeTransform } from "@angular/core";
 import { DomSanitizer } from "@angular/platform-browser";
 
 import { CmBypassSecurityType } from "../../enums";
 
 @Pipe({name: 'safe'})
-export class CmSafePipe {
+export class CmSafePipe implements PipeTransform {
   constructor(private sanitizer: DomSanitizer) {
   }
 
