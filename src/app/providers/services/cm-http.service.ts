@@ -3,7 +3,7 @@ import { HttpClient } from "@angular/common/http";
 
 import { Observable } from "rxjs";
 
-import {CmObject, CmRestApiOptions} from '../../models';
+import { CmObject, CmRestApiOptions } from '../../models';
 import { errorHandler } from "../error-handler";
 import { CmRestMethodEnum } from "../../enums";
 

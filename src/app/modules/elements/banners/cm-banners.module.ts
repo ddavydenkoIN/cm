@@ -16,6 +16,8 @@ import { CmBanner5Component } from "./cm-banner5/cm-banner5.component";
 import { CmBanner4Component } from "./cm-banner4/cm-banner4.component";
 import { CmBanner3Component } from "./cm-banner3/cm-banner3.component";
 import { CmBanner2Component } from "./cm-banner2/cm-banner2.component";
+import { CmBanner9Module } from "./cm-banner9/cm-banner9.module";
+import { CmBanner9Component } from "./cm-banner9/cm-banner9.component";
 
 const BANNER_MODULES = [
   CmBanner1Module,
@@ -26,6 +28,7 @@ const BANNER_MODULES = [
   CmBanner6Module,
   CmBanner7Module,
   CmBanner8Module,
+  CmBanner9Module,
 ];
 
 export const BANNERS_LIST = [
@@ -37,6 +40,7 @@ export const BANNERS_LIST = [
   CmBanner6Component,
   CmBanner7Component,
   CmBanner8Component,
+  CmBanner9Component,
 ];
 
 @NgModule({
