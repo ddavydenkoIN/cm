@@ -1,3 +1,5 @@
-<div class="cm-banner4__top-text">blog template</div>
-<div class="cm-banner4__center-text">Live the moment</div>
-<div class="cm-banner4__bottom-text">very long inspiring phrace</div>
+<div class="cm-banner4" [style.background-image]="'url(' + backgroundImages?.primary + ')'">
+  <div class="cm-banner4__top-text">{{text?.text1}}</div>
+  <div class="cm-banner4__center-text">{{text?.text2}}</div>
+  <div class="cm-banner4__bottom-text">{{text?.text2}}</div>
+</div>

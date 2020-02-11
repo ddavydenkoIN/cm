@@ -1,4 +1,4 @@
-:host {
+.cm-banner6 {
   width: 100%;
   height: 100%;
 
@@ -7,56 +7,52 @@
   grid-template-rows: 1fr 10fr;
   grid-template-columns: 1fr max-content 6fr 1fr;
 
-  background-image: url("/assets/img/elements/banners/banner6/black_background.jpg");
   background-size: cover;
-  background-position-y: center;
 
-  .cm-banner6 {
-    &__frame {
-      grid-row: 2;
-      grid-column: 3;
+  &__frame {
+    grid-row: 2;
+    grid-column: 3;
 
-      border-color: white;
-      border-width: 1px 1px 0px 9px;
-      border-style: solid solid none none;
+    border-color: white;
+    border-width: 1px 1px 0px 9px;
+    border-style: solid solid none none;
+  }
+  &__header {
+    grid-column: 2;
+    grid-row: 2;
+    color: white;
+
+    font-family: monospace;
+    font-variant-caps: small-caps;
+
+    div:first-child {
+      text-transform: uppercase;
+      text-indent: 0px;
+      font-family: fantasy;
+      font-size: 2em;
+      margin-right: 20px;
+      margin-top: -6px;
     }
-    &__header {
-      grid-column: 2;
-      grid-row: 2;
-      color: white;
+  }
+  &__bottom {
+    grid-row: 2;
+    grid-column: 2 / span 2;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: center;
+    color: white;
+
+    &-primary {
+      font-size: xx-large;
+      font-family: cursive;
+      margin-bottom: 5px;
+    }
+    &-secondary {
       font-family: monospace;
-      font-variant-caps: small-caps;
-
-      div:first-child {
-        text-transform: uppercase;
-        text-indent: 0px;
-        font-family: fantasy;
-        font-size: 2em;
-        margin-right: 20px;
-        margin-top: -6px;
-      }
-    }
-    &__bottom {
-      grid-row: 2;
-      grid-column: 2 / span 2;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      text-align: center;
-      color: white;
-
-      &-primary {
-        font-size: xx-large;
-        font-family: cursive;
-        margin-bottom: 5px;
-      }
-      &-secondary {
-        font-family: monospace;
-        font-size: smaller;
-        font-variant: small-caps;
-      }
+      font-size: smaller;
+      font-variant: small-caps;
     }
   }
 }

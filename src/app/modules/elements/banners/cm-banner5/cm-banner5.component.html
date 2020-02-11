@@ -1,9 +1,12 @@
-<div class="cm-banner5__frame"></div>
-<div class="cm-banner5__center">
-  <div class="cm-banner5__center-header">Center text 20%</div>
-  <div class="cm-banner5__center-container">
-    <div class="cm-banner5__center-container-label">LiFe IN MoTioN</div>
+<div class="cm-banner5" [style.background-image]="'url(' + backgroundImages?.primary + ')'">
+  <div class="cm-banner5__frame"></div>
+  <div class="cm-banner5__center">
+    <div class="cm-banner5__center-header">{{text?.text1}}</div>
+    <div class="cm-banner5__center-container">
+      <div class="cm-banner5__center-container-label">{{text?.text2}}</div>
+    </div>
   </div>
-</div>
 
-<div class="cm-banner5__bottom-text">Very inspiring text</div>
+  <div class="cm-banner5__bottom-text">{{text?.text3}}</div>
+
+</div>

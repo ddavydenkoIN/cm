@@ -1,0 +1,67 @@
+.cm-banner11 {
+//<div class="cm-banner11-left"></div>
+//<div class="cm-banner11-bottom"></div>
+//<div class="cm-banner11-top-left"></div>
+//<div class="cm-banner11-top-right"></div>
+//<div class="cm-banner11-bottom-text"></div>
+  display: grid;
+  height: 100%;
+  width: 100%;
+  position: relative;
+
+  grid-template-columns: 20px 4fr 30px 3fr 20px;
+  grid-template-rows: 20px 20px 1.5fr 1fr 1fr 20px;
+
+  &-left {
+    grid-column: 2 / span 2;
+    grid-row: 3 / span 3;
+    z-index: 2;
+    background-size: cover;
+  }
+
+  &-top {
+    &-left {
+      width: 70%;
+      grid-column: 2;
+      grid-row: 2;
+      height: 5px;
+      background-color: black;
+    }
+
+    &-right {
+      grid-column: 3 / span 2;
+      grid-row: 2 / span 2;
+      background-color: black;
+      z-index: 3;
+    }
+  }
+
+
+  &-bottom {
+    &-container {
+      grid-row: 5 / span 2;
+      grid-column: 1 / span 6;
+      z-index: 1;
+      background-color: black;
+    }
+    &-text {
+      grid-row: 5;
+      grid-column: 4;
+      color: white;
+      -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+      writing-mode: vertical-lr;
+      -webkit-text-orientation: inherit;
+      text-orientation: inherit;
+      padding: 5px;
+      text-align: start;
+      font-size: x-small;
+      font-variant-caps: all-small-caps;
+      font-family: inherit;
+      z-index: 2;
+      position: absolute;
+      bottom: 20px;
+      transform: rotate(180deg);
+    }
+  }
+}

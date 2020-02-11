@@ -18,6 +18,10 @@ import { CmBanner3Component } from "./cm-banner3/cm-banner3.component";
 import { CmBanner2Component } from "./cm-banner2/cm-banner2.component";
 import { CmBanner9Module } from "./cm-banner9/cm-banner9.module";
 import { CmBanner9Component } from "./cm-banner9/cm-banner9.component";
+import { CmBanner10Component } from "./cm-banner10/cm-banner10.component";
+import { CmBanner10Module } from "./cm-banner10/cm-banner10.module";
+import { CmBanner11Module } from "./cm-banner11/cm-banner11.module";
+import { CmBanner11Component } from "./cm-banner11/cm-banner11.component";
 
 const BANNER_MODULES = [
   CmBanner1Module,
@@ -29,6 +33,8 @@ const BANNER_MODULES = [
   CmBanner7Module,
   CmBanner8Module,
   CmBanner9Module,
+  CmBanner10Module,
+  CmBanner11Module,
 ];
 
 export const BANNERS_LIST = [
@@ -41,6 +47,8 @@ export const BANNERS_LIST = [
   CmBanner7Component,
   CmBanner8Component,
   CmBanner9Component,
+  CmBanner10Component,
+  CmBanner11Component,
 ];
 
 @NgModule({
