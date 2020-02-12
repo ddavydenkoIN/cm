@@ -34,7 +34,9 @@ import { CmDataService } from './providers/services/cm-data.service';
       metaReducers,
       runtimeChecks: {
         strictStateImmutability: true,
-        strictActionImmutability: true
+        strictActionImmutability: true,
+        strictStateSerializability: true,
+        strictActionSerializability: true,
       }
     }),
 

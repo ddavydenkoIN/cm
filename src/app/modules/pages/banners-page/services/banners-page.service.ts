@@ -11,6 +11,7 @@ import { CmBanner8Component } from "../../../elements/banners/cm-banner8/cm-bann
 import { CmBanner9Component } from "../../../elements/banners/cm-banner9/cm-banner9.component";
 import { CmBanner10Component } from "../../../elements/banners/cm-banner10/cm-banner10.component";
 import { CmBanner11Component } from "../../../elements/banners/cm-banner11/cm-banner11.component";
+import { CmBanner12Component } from '../../../elements/banners/cm-banner12/cm-banner12.component';
 
 @Injectable()
 export class CmBannersPageService {
@@ -143,6 +144,17 @@ export class CmBannersPageService {
           text1: "Lorem ipsum dolor",
           text2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           text3: "lorem ipsum dolor"
+        }
+      }
+    }, {
+      component: CmBanner12Component,
+      fields: {
+        backgroundImages: {
+          primary: "/assets/img/elements/banners/banner12/background.jpg",
+        },
+        text: {
+          text1: "Lorem ipsum dolor",
+          text2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         }
       }
     }
