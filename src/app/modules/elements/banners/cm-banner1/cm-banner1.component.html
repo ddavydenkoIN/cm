@@ -1,14 +1,14 @@
-<div class="cm-banner1__top"></div>
+<div class="cm-banner1__top" #bgPrimary></div>
 <div class="cm-banner1__bottom"></div>
-<div class="cm-banner1__center">
+<div class="cm-banner1__center" #bgPrimary #borderSecondary>
   <div class="cm-banner1__center-quotes">
     <img *ngIf="images" [src]="images?.url1"/>
   </div>
-  <div class="cm-banner1__center-text">
-    {{text?.text1}}
+  <div class="cm-banner1__center-text" [style.color]="text?.text1.color">
+    {{text?.text1?.caption}}
   </div>
-  <div class="cm-banner1__center-sub">{{text?.text2}}</div>
-  <div class="cm-banner1__center-signature">{{text?.text3}}</div>
+  <div class="cm-banner1__center-sub" [style.color]="text?.text2?.color">{{text?.text2?.caption}}</div>
+  <div class="cm-banner1__center-signature" [style.color]="text?.text3?.color">{{text?.text3?.caption}}</div>
 </div>
 
 

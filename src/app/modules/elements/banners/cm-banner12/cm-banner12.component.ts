@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CmBanner12Component implements OnInit {
 
+  name: string = 'CmBanner12Component';
+
   constructor() { }
 
   ngOnInit(): void {

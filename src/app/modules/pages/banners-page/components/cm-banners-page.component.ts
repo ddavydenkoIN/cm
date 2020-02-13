@@ -1,9 +1,9 @@
 import { AfterViewInit, Component, ComponentFactory, ComponentFactoryResolver, ComponentRef, OnDestroy, OnInit, QueryList, ViewChildren, ViewContainerRef } from '@angular/core';
-import { animate, keyframes, state, style, transition, trigger } from "@angular/animations";
-import { CmBanner } from "../../../elements/abstract/cm-banner";
-import { CmBannersPageService } from "../services/banners-page.service";
-import { CmBannerData } from "../../../../models/elements/banners";
-import { CmBannersPageBuilder } from "../builders/banners-page.builder";
+import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
+import { CmBanner } from '../../../elements/abstract/cm-banner';
+import { CmBannersPageService } from '../services/banners-page.service';
+import { CmBannerData } from '../../../../models/elements/banners';
+import { CmBannersPageBuilder } from '../builders/banners-page.builder';
 
 @Component({
   selector: 'cm-banners-page',

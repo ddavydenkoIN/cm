@@ -6,3 +6,4 @@ export * from './id.model';
 export * from './url-id.model';
 export * from './text/text.model';
 export * from './images/images.model';
+export * from './theme/theme';

@@ -8,6 +8,8 @@ import { CmBanner } from "../../abstract/cm-banner";
 })
 export class CmBanner8Component extends CmBanner implements OnInit {
 
+  name: string = 'CmBanner8Component';
+
   constructor() { super(); }
 
   ngOnInit() {

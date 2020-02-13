@@ -12,152 +12,175 @@ import { CmBanner9Component } from "../../../elements/banners/cm-banner9/cm-bann
 import { CmBanner10Component } from "../../../elements/banners/cm-banner10/cm-banner10.component";
 import { CmBanner11Component } from "../../../elements/banners/cm-banner11/cm-banner11.component";
 import { CmBanner12Component } from '../../../elements/banners/cm-banner12/cm-banner12.component';
+import { CmColorsEnum } from '../../../../enums/common';
+import { BANNERS_MAP } from '../../../elements/banners/cm-banners.module';
 
 @Injectable()
 export class CmBannersPageService {
 
   getBannersData(): CmBannerData[] {
-    return [{
-      component: CmBanner1Component,
+    return [
+      {
+        id: "CmBanner1Component",
+        fields: {
+          theme: {
+            primary: CmColorsEnum.BLUE,
+            secondary: CmColorsEnum.YELLOW,
+          },
+          backgroundColor: CmColorsEnum.BLACK,
+          images: { url1: '/assets/img/elements/banners/banner1/quote.icon.png' },
+          text: {
+            text1: {color: CmColorsEnum.YELLOW, caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.' },
+            text2: {color: CmColorsEnum.YELLOW, caption: 'Sincere'},
+            text3: {color: CmColorsEnum.YELLOW, caption: 'Mr. Smith'},
+          },
+        }
+      }, {
+      id: "CmBanner2Component",
       fields: {
-        images: { url1: '/assets/img/elements/banners/banner1/quote.icon.png' },
-        text: {
-          text1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
-          text2: 'Sincere',
-          text3: 'Mr. Smith',
+        theme: {
+          primary: CmColorsEnum.BLACK,
+          secondary: CmColorsEnum.WHITE,
         },
-      }
-    }, {
-      component: CmBanner2Component,
-      fields: {
         backgroundImages: {
           primary: '/assets/img/elements/banners/banner2/grey_background.jpg',
         },
         text: {
-          text1: "One Moment of life",
-          text2: "inspiring text",
-        }
-      }
-    }, {
-      component: CmBanner3Component,
-      fields: {
-        backgroundImages: {
-          primary: "/assets/img/elements/banners/banner3/france.jpg",
-        },
-        text: {
-          text1: "Very inspiring text",
-          text2: "CrEaTivE",
-        }
-      }
-    }, {
-      component: CmBanner4Component,
-      fields: {
-        backgroundImages: {
-          primary: "/assets/img/elements/banners/banner4/black_background.jpeg",
-        },
-        text: {
-          text1: "blog template",
-          text2: "Live the moment",
-          text3: "very long inspiring phrace",
-        }
-      }
-    }, {
-      component: CmBanner5Component,
-      fields: {
-        backgroundImages: {
-          primary: "/assets/img/elements/banners/banner5/black_background.jpg",
-        },
-        text: {
-          text1: "Center text 20%",
-          text2: "LiFe IN MoTioN",
-          text3: "Very inspiring text",
-        }
-      }
-    }, {
-      component: CmBanner6Component,
-      fields: {
-        backgroundImages: {
-          primary: "/assets/img/elements/banners/banner6/black_background.jpg",
-        },
-        text: {
-          text1: "Beauty",
-          text2: "private",
-          text3: "collection",
-          text4: "Top Trends",
-          text5: "For people with cash",
-        }
-      }
-    }, {
-      component: CmBanner7Component,
-      fields: {
-        backgroundImages: {
-          primary: "/assets/img/elements/banners/banner7/black-white-photo.jpg",
-        },
-        text: {
-          text1: "Very inspiring text for two lines straight.",
-          text2: "Enjoy your life",
-        }
-      }
-    }, {
-      component: CmBanner8Component,
-      fields: {
-        backgroundImages: {
-          primary: "/assets/img/elements/banners/banner6/black_background.jpg",
-        },
-        text: {
-          text1: "small text",
-          text2: "be careful with your thoughts they are the beginning of deeds",
-          text3: "proverbs 4:23",
-        }
-      }
-    }, {
-      component: CmBanner9Component,
-      fields: {
-        backgroundImages: {
-          primary: "/assets/img/elements/banners/banner9/background.jpg",
-        },
-        text: {
-          text1: "Lorem ipsum dolor",
-          text2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-          text3: "lorem ipsum"
-        }
-      }
-    }, {
-      component: CmBanner10Component,
-      fields: {
-        backgroundImages: {
-          primary: "/assets/img/elements/banners/banner10/background.jpg",
-        },
-        text: {
-          text1: "Lorem ipsum dolor",
-          text2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-          text3: "lorem ipsum"
-        }
-      }
-    }, {
-      component: CmBanner11Component,
-      fields: {
-        backgroundImages: {
-          primary: "/assets/img/elements/banners/banner11/background.jpg",
-        },
-        text: {
-          text1: "Lorem ipsum dolor",
-          text2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          text3: "lorem ipsum dolor"
-        }
-      }
-    }, {
-      component: CmBanner12Component,
-      fields: {
-        backgroundImages: {
-          primary: "/assets/img/elements/banners/banner12/background.jpg",
-        },
-        text: {
-          text1: "Lorem ipsum dolor",
-          text2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          text1: {
+            caption: "One Moment of life",
+            color: CmColorsEnum.WHITE,
+          },
+          text2: {
+            caption: "inspiring text",
+            color: CmColorsEnum.WHITE,
+          },
         }
       }
     }
-    ];
+    // , {
+    //   component: CmBanner3Component,
+    //   fields: {
+    //     backgroundImages: {
+    //       primary: "/assets/img/elements/banners/banner3/france.jpg",
+    //     },
+    //     text: {
+    //       text1: "Very inspiring text",
+    //       text2: "CrEaTivE",
+    //     }
+    //   }
+    // }, {
+    //   component: CmBanner4Component,
+    //   fields: {
+    //     backgroundImages: {
+    //       primary: "/assets/img/elements/banners/banner4/black_background.jpeg",
+    //     },
+    //     text: {
+    //       text1: "blog template",
+    //       text2: "Live the moment",
+    //       text3: "very long inspiring phrace",
+    //     }
+    //   }
+    // }, {
+    //   component: CmBanner5Component,
+    //   fields: {
+    //     backgroundImages: {
+    //       primary: "/assets/img/elements/banners/banner5/black_background.jpg",
+    //     },
+    //     text: {
+    //       text1: "Center text 20%",
+    //       text2: "LiFe IN MoTioN",
+    //       text3: "Very inspiring text",
+    //     }
+    //   }
+    // }, {
+    //   component: CmBanner6Component,
+    //   fields: {
+    //     backgroundImages: {
+    //       primary: "/assets/img/elements/banners/banner6/black_background.jpg",
+    //     },
+    //     text: {
+    //       text1: "Beauty",
+    //       text2: "private",
+    //       text3: "collection",
+    //       text4: "Top Trends",
+    //       text5: "For people with cash",
+    //     }
+    //   }
+    // }, {
+    //   component: CmBanner7Component,
+    //   fields: {
+    //     backgroundImages: {
+    //       primary: "/assets/img/elements/banners/banner7/black-white-photo.jpg",
+    //     },
+    //     text: {
+    //       text1: "Very inspiring text for two lines straight.",
+    //       text2: "Enjoy your life",
+    //     }
+    //   }
+    // }, {
+    //   component: CmBanner8Component,
+    //   fields: {
+    //     backgroundImages: {
+    //       primary: "/assets/img/elements/banners/banner6/black_background.jpg",
+    //     },
+    //     text: {
+    //       text1: "small text",
+    //       text2: "be careful with your thoughts they are the beginning of deeds",
+    //       text3: "proverbs 4:23",
+    //     }
+    //   }
+    // }, {
+    //   component: CmBanner9Component,
+    //   fields: {
+    //     backgroundImages: {
+    //       primary: "/assets/img/elements/banners/banner9/background.jpg",
+    //     },
+    //     text: {
+    //       text1: "Lorem ipsum dolor",
+    //       text2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    //       text3: "lorem ipsum"
+    //     }
+    //   }
+    // }, {
+    //   component: CmBanner10Component,
+    //   fields: {
+    //     backgroundImages: {
+    //       primary: "/assets/img/elements/banners/banner10/background.jpg",
+    //     },
+    //     text: {
+    //       text1: "Lorem ipsum dolor",
+    //       text2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    //       text3: "lorem ipsum"
+    //     }
+    //   }
+    // }, {
+    //   component: CmBanner11Component,
+    //   fields: {
+    //     backgroundImages: {
+    //       primary: "/assets/img/elements/banners/banner11/background.jpg",
+    //     },
+    //     text: {
+    //       text1: "Lorem ipsum dolor",
+    //       text2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    //       text3: "lorem ipsum dolor"
+    //     }
+    //   }
+    // }, {
+    //   component: CmBanner12Component,
+    //   fields: {
+    //     backgroundImages: {
+    //       primary: "/assets/img/elements/banners/banner12/background.jpg",
+    //     },
+    //     text: {
+    //       text1: "Lorem ipsum dolor",
+    //       text2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    //     }
+    //   }
+    // }
+    ]
+      .map((data: CmBannerData) => ({
+        ...data,
+        component: BANNERS_MAP[data.id],
+      }));
   }
 }

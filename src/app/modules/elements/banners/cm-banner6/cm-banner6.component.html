@@ -1,13 +1,13 @@
 <div class="cm-banner6" [style.background-image]="'url(' + backgroundImages?.primary + ')'">
   <div class="cm-banner6__frame"></div>
   <div class="cm-banner6__header">
-    <div>{{text.text1}}</div>
-    <div>{{text.text2}}</div>
-    <div>{{text.text3}}</div>
+    <div>{{text?.text1?.caption}}</div>
+    <div>{{text?.text2?.caption}}</div>
+    <div>{{text?.text3?.caption}}</div>
   </div>
   <div class="cm-banner6__bottom">
-    <div class="cm-banner6__bottom-primary">{{text.text4}}</div>
-    <div class="cm-banner6__bottom-secondary">{{text.text5}}</div>
+    <div class="cm-banner6__bottom-primary">{{text?.text4?.caption}}</div>
+    <div class="cm-banner6__bottom-secondary">{{text?.text5?.caption}}</div>
   </div>
 
 </div>

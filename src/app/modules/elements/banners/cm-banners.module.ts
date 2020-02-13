@@ -40,20 +40,20 @@ const BANNER_MODULES = [
   CmBanner12Module,
 ];
 
-export const BANNERS_LIST = [
-  CmBanner1Component,
-  CmBanner2Component,
-  CmBanner3Component,
-  CmBanner4Component,
-  CmBanner5Component,
-  CmBanner6Component,
-  CmBanner7Component,
-  CmBanner8Component,
-  CmBanner9Component,
-  CmBanner10Component,
-  CmBanner11Component,
-  CmBanner12Component,
-];
+export const BANNERS_MAP = {
+  'CmBanner1Component': CmBanner1Component,
+  'CmBanner2Component': CmBanner2Component,
+  'CmBanner3Component': CmBanner3Component,
+  'CmBanner4Component': CmBanner4Component,
+  'CmBanner5Component': CmBanner5Component,
+  'CmBanner6Component': CmBanner6Component,
+  'CmBanner7Component': CmBanner7Component,
+  'CmBanner8Component': CmBanner8Component,
+  'CmBanner9Component': CmBanner9Component,
+  'CmBanner10Component': CmBanner10Component,
+  'CmBanner11Component': CmBanner11Component,
+  'CmBanner12Component': CmBanner12Component,
+}
 
 @NgModule({
   declarations: [],
