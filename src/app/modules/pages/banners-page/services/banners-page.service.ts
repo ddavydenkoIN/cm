@@ -14,49 +14,68 @@ import { CmBanner11Component } from "../../../elements/banners/cm-banner11/cm-ba
 import { CmBanner12Component } from '../../../elements/banners/cm-banner12/cm-banner12.component';
 import { CmColorsEnum } from '../../../../enums/common';
 import { BANNERS_MAP } from '../../../elements/banners/cm-banners.module';
+import { CmHttpService } from "../../../../providers/services/cm-http.service";
+import { CmBannersStoreService } from "../store/banners-store.service";
+import { Observable } from "rxjs";
+import { map } from "rxjs/operators";
 
 @Injectable()
 export class CmBannersPageService {
+  constructor(private httpService: CmHttpService,
+              private bannersStoreService: CmBannersStoreService) {}
 
-  getBannersData(): CmBannerData[] {
-    return [
-      {
-        id: "CmBanner1Component",
-        fields: {
-          theme: {
-            primary: CmColorsEnum.BLUE,
-            secondary: CmColorsEnum.YELLOW,
-          },
-          backgroundColor: CmColorsEnum.BLACK,
-          images: { url1: '/assets/img/elements/banners/banner1/quote.icon.png' },
-          text: {
-            text1: {color: CmColorsEnum.YELLOW, caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.' },
-            text2: {color: CmColorsEnum.YELLOW, caption: 'Sincere'},
-            text3: {color: CmColorsEnum.YELLOW, caption: 'Mr. Smith'},
-          },
-        }
-      }, {
-      id: "CmBanner2Component",
-      fields: {
-        theme: {
-          primary: CmColorsEnum.BLACK,
-          secondary: CmColorsEnum.WHITE,
-        },
-        backgroundImages: {
-          primary: '/assets/img/elements/banners/banner2/grey_background.jpg',
-        },
-        text: {
-          text1: {
-            caption: "One Moment of life",
-            color: CmColorsEnum.WHITE,
-          },
-          text2: {
-            caption: "inspiring text",
-            color: CmColorsEnum.WHITE,
-          },
-        }
-      }
-    }
+  loadBannersData(): void {
+    this.bannersStoreService.loadBannersData();
+  }
+
+  retrieveAllBanners(): Observable<CmBannerData[]> {
+    return this.bannersStoreService.retrieveAllBanners()
+      .pipe(
+        map((bannersData: CmBannerData[]) => bannersData.map((bannerData: CmBannerData) => ({
+          ...bannerData,
+          component: BANNERS_MAP[bannerData.id],
+        })),
+      ));
+  }
+    //
+    // return [
+    //   {
+    //     id: "CmBanner1Component",
+    //     fields: {
+    //       theme: {
+    //         primary: CmColorsEnum.BLUE,
+    //         secondary: CmColorsEnum.YELLOW,
+    //       },
+    //       backgroundColor: CmColorsEnum.BLACK,
+    //       images: { url1: '/assets/img/elements/banners/banner1/quote.icon.png' },
+    //       text: {
+    //         text1: {color: CmColorsEnum.YELLOW, caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.' },
+    //         text2: {color: CmColorsEnum.YELLOW, caption: 'Sincere'},
+    //         text3: {color: CmColorsEnum.YELLOW, caption: 'Mr. Smith'},
+    //       },
+    //     }
+    //   }, {
+    //   id: "CmBanner2Component",
+    //   fields: {
+    //     theme: {
+    //       primary: CmColorsEnum.BLACK,
+    //       secondary: CmColorsEnum.WHITE,
+    //     },
+    //     backgroundImages: {
+    //       primary: '/assets/img/elements/banners/banner2/grey_background.jpg',
+    //     },
+    //     text: {
+    //       text1: {
+    //         caption: "One Moment of life",
+    //         color: CmColorsEnum.WHITE,
+    //       },
+    //       text2: {
+    //         caption: "inspiring text",
+    //         color: CmColorsEnum.WHITE,
+    //       },
+    //     }
+    //   }
+    // }
     // , {
     //   component: CmBanner3Component,
     //   fields: {
@@ -177,10 +196,7 @@ export class CmBannersPageService {
     //     }
     //   }
     // }
-    ]
-      .map((data: CmBannerData) => ({
-        ...data,
-        component: BANNERS_MAP[data.id],
-      }));
-  }
+    // ]
+
+  //}
 }

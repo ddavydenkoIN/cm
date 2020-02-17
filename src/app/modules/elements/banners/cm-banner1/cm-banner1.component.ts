@@ -8,7 +8,7 @@ import { CmBanner } from "../../abstract/cm-banner";
 })
 export class CmBanner1Component extends CmBanner implements OnInit {
 
-  name: string = 'CmBanner1Component';
+  id: string = 'CmBanner1Component';
 
   constructor() {
     super();

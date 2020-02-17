@@ -20,7 +20,7 @@ export class CmBanner extends CmText implements OnInit, AfterViewInit {
   readonly WHITE = '#fff';
   readonly BLACK = '#000';
 
-  protected name: string;
+  protected id: string;
 
   @ViewChildren('bgPrimary', { read: ViewContainerRef })
   primaryBGElements: QueryList<ViewContainerRef>;

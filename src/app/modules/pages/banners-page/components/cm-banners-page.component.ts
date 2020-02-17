@@ -4,6 +4,8 @@ import { CmBanner } from '../../../elements/abstract/cm-banner';
 import { CmBannersPageService } from '../services/banners-page.service';
 import { CmBannerData } from '../../../../models/elements/banners';
 import { CmBannersPageBuilder } from '../builders/banners-page.builder';
+import { takeUntil } from "rxjs/operators";
+import { CmUnsubscribe } from "../../../../providers/abstract/cm-unsubscribe";
 
 @Component({
   selector: 'cm-banners-page',
@@ -28,7 +30,7 @@ import { CmBannersPageBuilder } from '../builders/banners-page.builder';
     ]),
   ]
 })
-export class CmBannersPageComponent implements OnInit, AfterViewInit, OnDestroy {
+export class CmBannersPageComponent extends CmUnsubscribe implements OnInit, AfterViewInit, OnDestroy {
 
   @ViewChildren('bannerContainers', { read: ViewContainerRef })
   bannerContainers: QueryList<ViewContainerRef>;
@@ -38,13 +40,19 @@ export class CmBannersPageComponent implements OnInit, AfterViewInit, OnDestroy 
   private componentRefs: ComponentRef<CmBanner>[] = [];
 
   constructor(private resolver: ComponentFactoryResolver,
-              private bannerPageService: CmBannersPageService) { }
+              private bannerPageService: CmBannersPageService) {
+    super();
+  }
 
   ngOnInit() {
-    this.bannerList = this.bannerPageService.getBannersData();
+    this.bannerPageService.loadBannersData();
+    this.bannerPageService.retrieveAllBanners()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((banners: CmBannerData[]) => this.bannerList = banners);
   }
 
   ngAfterViewInit() {
+    this.bannerList &&
     this.bannerList.forEach((data: any, index: number) => {
       const factory: ComponentFactory<CmBanner> = this.resolver.resolveComponentFactory(data.component);
       const ref = this.bannerContainers.toArray()[index].createComponent(factory);

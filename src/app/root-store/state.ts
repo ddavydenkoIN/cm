@@ -1,5 +1,9 @@
-import {RouterReducerState} from '@ngrx/router-store';
+import { CmBannersState } from "../modules/pages/banners-page/store/banners.state";
 
 export interface CmState {
-  router: RouterReducerState;
+  banners: CmBannersState;
+}
+
+export const cmInitialState: CmState = {
+  banners: null,
 }

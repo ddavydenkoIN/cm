@@ -16,6 +16,8 @@ import { CmTranslateModule } from './modules/translate/cm-translate.module';
 import { cmReducers, metaReducers } from './root-store/reducers';
 import { cmEffects } from './root-store/effects';
 import { CmDataService } from './providers/services/cm-data.service';
+import { environment } from "../environments/environment";
+import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 
 @NgModule({
   imports: [
@@ -29,7 +31,6 @@ import { CmDataService } from './providers/services/cm-data.service';
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(CmDataService, {dataEncapsulation: false, passThruUnknownUrl: true, delay: 0}),
 
-    StoreRouterConnectingModule.forRoot({stateKey: 'router'}),
     StoreModule.forRoot(cmReducers, {
       metaReducers,
       runtimeChecks: {
@@ -39,7 +40,9 @@ import { CmDataService } from './providers/services/cm-data.service';
         strictActionSerializability: true,
       }
     }),
-
+    environment.production ? [] : StoreDevtoolsModule.instrument({
+      logOnly: false,
+    }),
     EffectsModule.forRoot(cmEffects),
   ],
     declarations: [
