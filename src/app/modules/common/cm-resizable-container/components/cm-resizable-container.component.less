@@ -1,0 +1,67 @@
+@import "../../../../../assets/styles/colors";
+
+@resize-color: @color-orange;
+@border-style: 1px dashed @resize-color;
+@border-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+@initial-element-height: 400px;
+@initial-element-width: 400px;
+
+:host {
+  margin-right: 20px;
+}
+.container {
+  box-shadow: @border-shadow;
+  padding: 10px;
+  background-color: @color-white;
+
+  &__borders {
+    width: @initial-element-width;
+    height: @initial-element-height;
+  }
+
+  &__actions {
+    &-panel {
+      margin: 0 0 10px 0;
+      height: auto;
+      background-color: rgba(230, 230, 230, 0.5);
+      &-button {
+        margin: 5px 2px;
+        width: 100px;
+        &::ng-deep {
+          .mat-select-trigger {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+.ng-resizable {
+  height: 100%;
+
+  &-handle {
+    color: @resize-color;
+    z-index: 1000;
+  }
+  &-diagonal {
+    color: @resize-color;
+    z-index: 1000;
+    margin-bottom: -6px;
+    margin-right: -6px;
+    border-bottom-color: @resize-color;
+  }
+
+  &-e {
+    border-right: @border-style;
+  }
+  &-s {
+    border-bottom: @border-style;
+  }
+  &-n {
+    border-top: @border-style;
+  }
+  &-w {
+    border-left: @border-style;
+  }
+}
+

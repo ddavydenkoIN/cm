@@ -52,17 +52,19 @@ export class CmBannersPageComponent extends CmUnsubscribe implements OnInit, Aft
   }
 
   ngAfterViewInit() {
-    this.bannerList &&
-    this.bannerList.forEach((data: any, index: number) => {
-      const factory: ComponentFactory<CmBanner> = this.resolver.resolveComponentFactory(data.component);
-      const ref = this.bannerContainers.toArray()[index].createComponent(factory);
-      this.componentRefs.push(
-        new CmBannersPageBuilder()
-        .setComponentRef(ref)
-        .setFields(data.fields)
-        .build()
-      );
-    });
+    setTimeout(() => {
+      this.bannerList &&
+      this.bannerList.forEach((data: any, index: number) => {
+        const factory: ComponentFactory<CmBanner> = this.resolver.resolveComponentFactory(data.component);
+        const ref = this.bannerContainers.toArray()[index].createComponent(factory);
+        this.componentRefs.push(
+          new CmBannersPageBuilder()
+            .setComponentRef(ref)
+            .setFields(data.fields)
+            .build()
+        );
+      });
+    }, 0);
   }
 
   ngOnDestroy() {

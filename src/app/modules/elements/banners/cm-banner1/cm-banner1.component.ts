@@ -10,6 +10,9 @@ export class CmBanner1Component extends CmBanner implements OnInit {
 
   id: string = 'CmBanner1Component';
 
+  minHeight = "250px";
+  minWidth = "250px";
+
   constructor() {
     super();
   }

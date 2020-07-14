@@ -7,7 +7,7 @@ import { CmBannersModule } from './banners/cm-banners.module';
   declarations: [],
   imports: [
     CommonModule,
-    CmBannersModule
+    CmBannersModule,
   ],
   exports: [CmBannersModule],
 })

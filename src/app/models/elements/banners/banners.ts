@@ -1,8 +1,7 @@
-import { CmId, CmImagesModel, CmTextModel, CmThemeModel } from '../../common';
+import { CmImagesModel, CmTextModel, CmThemeModel } from '../../common';
+import { CmElement } from '../element.model';
 
-export interface CmBannerData extends CmId<string> {
-  component?: unknown;
-  fields?: CmBannerDataFields;
+export interface CmBannerData extends CmElement {
 }
 
 export interface CmBannerDataFields {

@@ -41,18 +41,18 @@ const BANNER_MODULES = [
 ];
 
 export const BANNERS_MAP = {
-  'CmBanner1Component': CmBanner1Component,
-  'CmBanner2Component': CmBanner2Component,
-  'CmBanner3Component': CmBanner3Component,
-  'CmBanner4Component': CmBanner4Component,
-  'CmBanner5Component': CmBanner5Component,
-  'CmBanner6Component': CmBanner6Component,
-  'CmBanner7Component': CmBanner7Component,
-  'CmBanner8Component': CmBanner8Component,
-  'CmBanner9Component': CmBanner9Component,
-  'CmBanner10Component': CmBanner10Component,
-  'CmBanner11Component': CmBanner11Component,
-  'CmBanner12Component': CmBanner12Component,
+  '1': CmBanner1Component,
+  '2': CmBanner2Component,
+  '3': CmBanner3Component,
+  '4': CmBanner4Component,
+  '5': CmBanner5Component,
+  '6': CmBanner6Component,
+  '7': CmBanner7Component,
+  '8': CmBanner8Component,
+  '9': CmBanner9Component,
+  '10': CmBanner10Component,
+  '11': CmBanner11Component,
+  '12': CmBanner12Component,
 }
 
 @NgModule({

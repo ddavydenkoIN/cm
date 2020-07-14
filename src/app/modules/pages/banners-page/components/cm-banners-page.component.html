@@ -1,6 +1,9 @@
 <div class="cm-banners__container">
   <ng-container *ngFor="let banner of bannerList; let i = index">
-    <cm-actions-container [@flyInTrigger]="'in'" class="cm-banners__container-banner">
+    <cm-actions-container [@flyInTrigger]="'in'"
+                          class="cm-banners__container-banner"
+                          [type]="'banner'"
+                          [id]="banner.id">
       <ng-template #bannerContainers></ng-template>
       <div class="cm-banners__container-banner-count">{{i + 1}}</div>
     </cm-actions-container>

@@ -1,31 +1,28 @@
-import { Injectable } from "@angular/core";
-import { CmBanner1Component } from "../../../elements/banners/cm-banner1/cm-banner1.component";
-import { CmBannerData } from "../../../../models/elements/banners";
-import { CmBanner2Component } from "../../../elements/banners/cm-banner2/cm-banner2.component";
-import { CmBanner4Component } from "../../../elements/banners/cm-banner4/cm-banner4.component";
-import { CmBanner3Component } from "../../../elements/banners/cm-banner3/cm-banner3.component";
-import { CmBanner7Component } from "../../../elements/banners/cm-banner7/cm-banner7.component";
-import { CmBanner5Component } from "../../../elements/banners/cm-banner5/cm-banner5.component";
-import { CmBanner6Component } from "../../../elements/banners/cm-banner6/cm-banner6.component";
-import { CmBanner8Component } from "../../../elements/banners/cm-banner8/cm-banner8.component";
-import { CmBanner9Component } from "../../../elements/banners/cm-banner9/cm-banner9.component";
-import { CmBanner10Component } from "../../../elements/banners/cm-banner10/cm-banner10.component";
-import { CmBanner11Component } from "../../../elements/banners/cm-banner11/cm-banner11.component";
-import { CmBanner12Component } from '../../../elements/banners/cm-banner12/cm-banner12.component';
-import { CmColorsEnum } from '../../../../enums/common';
+import { Injectable } from '@angular/core';
+import { CmBannerData } from '../../../../models/elements/banners';
 import { BANNERS_MAP } from '../../../elements/banners/cm-banners.module';
-import { CmHttpService } from "../../../../providers/services/cm-http.service";
-import { CmBannersStoreService } from "../store/banners-store.service";
-import { Observable } from "rxjs";
-import { map } from "rxjs/operators";
+import { CmHttpService } from '../../../../providers/services/cm-http.service';
+import { CmBannersStoreService } from '../store/banners-store.service';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class CmBannersPageService {
   constructor(private httpService: CmHttpService,
               private bannersStoreService: CmBannersStoreService) {}
 
   loadBannersData(): void {
     this.bannersStoreService.loadBannersData();
+  }
+
+  retrieveBannerById(id: string): Observable<CmBannerData> {
+    return this.bannersStoreService.retrieveBannerById(id)
+      .pipe(
+        map((bannerData: CmBannerData) => ({
+            ...bannerData,
+            component: BANNERS_MAP[bannerData.id],
+          }),
+        ));
   }
 
   retrieveAllBanners(): Observable<CmBannerData[]> {

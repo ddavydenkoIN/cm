@@ -1,0 +1,33 @@
+<div class="container" #componentContainer
+    [style.width]="containerWidth"
+    [style.height]="containerHeight">
+  <div class="container__actions">
+    <div class="container__actions-panel">
+      <button mat-raised-button
+              class="container__actions-panel-button"
+              matTooltip="Set resize ratio">
+        <mat-icon>image_aspect_ratio</mat-icon>
+        <mat-select #select [(ngModel)]="aspectRatio">
+          <mat-option [value]="null">Manual</mat-option>
+          <mat-option [value]="1">50:50</mat-option>
+          <mat-option [value]="16/9">16:9</mat-option>
+          <mat-option [value]="4/3">4:3</mat-option>
+        </mat-select>
+      </button>
+<!--      <button class="container__actions-panel-button">-->
+<!--        <mat-icon>photo_size_select_large</mat-icon>-->
+<!--      </button>-->
+
+    </div>
+  </div>
+  <div class="container__borders">
+    <div ngResizable
+         [rzHandles]="'all'"
+         [rzMinHeight]="elementMinHeight"
+         [rzMinWidth]="elementMinWidth"
+         [rzAspectRatio]="aspectRatio"
+         [rzContainment]="componentContainer">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

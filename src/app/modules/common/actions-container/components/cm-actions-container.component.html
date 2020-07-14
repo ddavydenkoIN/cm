@@ -2,5 +2,9 @@
     (mouseenter)="toggleActions()"
     (mouseleave)="toggleActions()">
   <ng-content></ng-content>
-  <div [@showHide]="isShow ? 'show' : 'hide'" class="cm-actions-container__body"></div>
+  <div [@showHide]="isShow ? 'show' : 'hide'" class="cm-actions-container__body">
+    <button mat-mini-fab (click)="onEditButtonClick()">
+      <mat-icon>edit</mat-icon>
+    </button>
+  </div>
 </div>

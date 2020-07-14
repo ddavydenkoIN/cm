@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { CmElementType } from '../../../../models/elements';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'cm-actions-container',
@@ -8,16 +10,15 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   animations: [
     trigger('showHide', [
       state('show', style({
-        bottom: '0px',
-        height: '20%',
-        width: '100%',
-        opacity: 0.5,
-        'background-color': 'red',
+        left: '0px',
+        height: '100%',
+        top: '0px',
+        opacity: 0.5
       })),
       state('hide', style({
         opacity: 0,
-        bottom: '0px',
-        width: '100%',
+        left: '-50px',
+        top: '0px',
       })),
       transition('hide <=> show', [
         animate('0.5s')
@@ -26,16 +27,25 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   ]
 })
 export class CmActionsContainerComponent implements OnInit {
+  @Input()
+  type: CmElementType;
+
+  @Input()
+  id: string;
 
   isShow: boolean;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
   toggleActions(): void {
     this.isShow = !this.isShow;
+  }
+
+  onEditButtonClick(): void {
+    this.router.navigateByUrl(`/playground/${this.type}/${this.id}`);
   }
 
 }

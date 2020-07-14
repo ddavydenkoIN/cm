@@ -9,6 +9,11 @@ const routes: Routes = [
     pathMatch: 'full',
     loadChildren: () => import('./modules/pages/banners-page/cm-banners-page.module').then(mod => mod.CmBannersPageModule)
   },
+  {
+    path: 'playground/:type/:id',
+    pathMatch: 'full',
+    loadChildren: () => import('./modules/pages/playground-page/cm-playground-page.module').then(mod => mod.CmPlaygroundPageModule)
+  },
   { path: '**', loadChildren: () => import('./modules/pages/error-page/cm-error-page.module').then(mod => mod.CmErrorPageModule)}
 ];
 

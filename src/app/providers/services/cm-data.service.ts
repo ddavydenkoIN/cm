@@ -10,7 +10,9 @@ export class CmDataService implements InMemoryDbService {
   createDb() {
     const banners: CmBannerData[] = [
       {
-        id: "CmBanner1Component",
+        id: "1",
+        name: "1",
+        type: "banner",
         fields: {
           theme: {
             primary: CmColorsEnum.WHITE,
@@ -25,7 +27,9 @@ export class CmDataService implements InMemoryDbService {
           },
         }
       }, {
-        id: "CmBanner2Component",
+        id: "2",
+        name: "2",
+        type: "banner",
         fields: {
           theme: {
             primary: CmColorsEnum.BLACK,
