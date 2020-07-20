@@ -1,6 +1,13 @@
-<h1>Elements</h1>
-<nav>
-  <a routerLink="/banners" routerLinkActive="active">Banners</a>
-</nav>
-<router-outlet></router-outlet>
+<div class="cm-app">
+  <cm-header class="cm-app__header"
+             (onToggleExpandNavBar)="drawer.toggle()">
+  </cm-header>
+  <mat-drawer-container class="cm-app__container" autosize>
+    <mat-drawer #drawer class="cm-app__container-sidenav" mode="side">
+      <a mat-stroked-button routerLink="/banners" routerLinkActive="active">Banners</a>
+    </mat-drawer>
 
+    <router-outlet class="cm-app__container-body"></router-outlet>
+
+  </mat-drawer-container>
+</div>

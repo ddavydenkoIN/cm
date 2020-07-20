@@ -12,7 +12,4 @@ export interface CmBannerDataFields {
   theme?: CmThemeModel;
 }
 
-export interface CmBannerBackgroundImages {
-  primary: string;
-  secondary?: string;
-}
+export interface CmBannerBackgroundImages extends CmImagesModel {}

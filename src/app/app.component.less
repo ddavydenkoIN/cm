@@ -1,0 +1,15 @@
+@import '../assets/styles/variables';
+
+.cm-app {
+  display: grid;
+
+  grid-template-rows: @header-height 1fr;
+
+  &__header {
+    grid-row: 1;
+    z-index: @header-z-index;
+  }
+  &__container {
+    height: calc(100vh - @header-height);
+  }
+}

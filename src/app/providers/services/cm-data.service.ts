@@ -36,7 +36,7 @@ export class CmDataService implements InMemoryDbService {
             secondary: CmColorsEnum.WHITE,
           },
           backgroundImages: {
-            primary: '/assets/img/elements/banners/banner2/grey_background.jpg',
+            url1: '/assets/img/elements/banners/banner2/grey_background.jpg',
           },
           text: {
             text1: {

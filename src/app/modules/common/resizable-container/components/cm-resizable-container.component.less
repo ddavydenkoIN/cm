@@ -8,22 +8,29 @@
 
 :host {
   margin-right: 20px;
+  margin-bottom: 10px;
+
 }
 .container {
   box-shadow: @border-shadow;
-  padding: 10px;
-  background-color: @color-white;
+  padding: 0 10px 10px 10px;
+  display: grid;
+  grid-template-columns: 60px 1fr;
 
   &__borders {
     width: @initial-element-width;
     height: @initial-element-height;
+    padding: 10px 0 0 20px;
   }
 
   &__actions {
+    padding-top: 10px;
+    grid-column: 1;
+
     &-panel {
       margin: 0 0 10px 0;
-      height: auto;
-      background-color: rgba(230, 230, 230, 0.5);
+      height: 100%;
+      width: auto;
       &-button {
         margin: 5px 2px;
         width: 100px;

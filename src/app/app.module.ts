@@ -17,15 +17,19 @@ import { cmEffects } from './root-store/effects';
 import { CmDataService } from './providers/services/cm-data.service';
 import { environment } from "../environments/environment";
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
+import { CmMaterialModule } from './modules/common/material/material.module';
+import { CmHeaderModule } from './modules/common/header/cm-header.module';
 
 @NgModule({
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatIconModule,
+    CmMaterialModule,
 
     CmRoutingModule,
     CmTranslateModule,
+    CmHeaderModule,
 
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(CmDataService, {dataEncapsulation: false, passThruUnknownUrl: true, delay: 0}),

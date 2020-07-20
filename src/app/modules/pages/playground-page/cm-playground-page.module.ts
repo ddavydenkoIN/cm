@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 import { CmPlaygroundRoutingModule } from './cm-playground-routing.module';
 import { CmBannersModule } from '../../elements/banners/cm-banners.module';
 import { CmPlaygroundService } from './services/cm-playground.service';
-import { CmResizableContainerModule } from '../../common/cm-resizable-container/cm-resizable-container.module';
 import { CmPlaygroundPageComponent } from './cm-playground-page.component';
 import { CmPlaygroundFormModule } from './modules/cp-playground-form.module';
+import { CmResizableContainerModule } from '../../common/resizable-container/cm-resizable-container.module';
 
 @NgModule({
   declarations: [CmPlaygroundPageComponent],

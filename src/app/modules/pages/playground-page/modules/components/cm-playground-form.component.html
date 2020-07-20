@@ -1,1 +1,54 @@
-<p>cm-playground-form works!</p>
+<h2>Edit Element</h2>
+
+<div *ngIf="form">
+  <ul *ngFor="let control of form.controls['base']['controls']">
+    {{control.name}}
+      <ng-container
+        [ngTemplateOutlet]="control.type ? terminalControl : parentalControl"
+        [ngTemplateOutletContext]="{node: control.type ? control : control.controls}">
+      </ng-container>
+  </ul>
+</div>
+
+<ng-template #parentalControl let-controls='node'>
+  <li *ngFor="let node of controls">
+    <div *ngIf="!node.type">
+      {{node.name}}
+    </div>
+    <ng-container
+      [ngTemplateOutlet]="node.type ? terminalControl : parentalControl"
+      [ngTemplateOutletContext]="{node: node.type ? node : node.controls}">
+    </ng-container>
+  </li>
+</ng-template>
+
+<ng-template #terminalControl let-control='node'>
+  <ng-container *ngIf="control">
+    <div [ngSwitch]="control.type">
+      <div *ngSwitchCase="'textField'">
+        <mat-form-field class="example-form-field">
+          <mat-label>{{control.name}}</mat-label>
+          <input matInput type="text" [(ngModel)]="control.value">
+<!--          <button mat-icon-button-->
+<!--                  aria-label="Clear"-->
+<!--                  (click)="control.value =''">-->
+<!--            <mat-icon>close</mat-icon>-->
+<!--          </button>-->
+          <button mat-button *ngIf="control.value" matSuffix mat-icon-button (click)="control.value =''">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      <div *ngSwitchCase="'memoField'">
+        <textarea maxlength="400"
+                  [value]="control.value">{{control.value}}</textarea>
+      </div>
+      <div *ngSwitchDefault>
+        <input [value]="'default value'">
+      </div>
+
+    </div>
+  </ng-container>
+</ng-template>
+
+

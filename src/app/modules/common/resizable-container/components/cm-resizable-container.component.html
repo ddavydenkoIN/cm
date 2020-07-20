@@ -1,0 +1,28 @@
+<div class="container" #componentContainer
+    [style.width]="containerWidth"
+    [style.height]="containerHeight">
+  <div class="container__actions">
+    <div class="container__actions-panel">
+      <button mat-raised-button color="primary" [matMenuTriggerFor]="menu" aria-label="Change aspect ratio">
+        <mat-icon>photo_size_select_small</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item
+                *ngFor="let option of aspectRatioOptions"
+                (click)="aspectRatio = option.value">
+          <span>{{option.name}}</span>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+  <div class="container__borders">
+    <div ngResizable
+         [rzHandles]="'all'"
+         [rzMinHeight]="elementMinHeight"
+         [rzMinWidth]="elementMinWidth"
+         [rzAspectRatio]="aspectRatio"
+         [rzContainment]="componentContainer">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

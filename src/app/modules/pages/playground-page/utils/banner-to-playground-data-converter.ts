@@ -8,19 +8,17 @@ export class BannerToPlaygroundDataConverter implements CmPlaygroundDataConverte
   constructor(bannerModel: CmBannerData) {
     this.banner = bannerModel;
   }
-  static PARENT_NODES_LIST: string[] = ['images', 'text', 'backgroundImages'];
+  static PARENT_NODES_LIST: string[] = ['images', 'text', 'backgroundImages', 'theme', 'text1', 'text2', 'text3'];
   static FIELD_NAME_TO_INPUT_TYPE_MAP = new Map([
     ['backgroundColor', CmInputType.COLOR_PICKER],
     ['url1', CmInputType.TEXT_FIELD],
     ['url2', CmInputType.TEXT_FIELD],
     ['url3', CmInputType.TEXT_FIELD],
     ['url4', CmInputType.TEXT_FIELD],
-    ['text1', CmInputType.MEMO_FIELD],
-    ['text2', CmInputType.MEMO_FIELD],
-    ['text3', CmInputType.MEMO_FIELD],
-    ['text4', CmInputType.MEMO_FIELD],
-    ['primary', CmInputType.TEXT_FIELD],
-    ['secondary', CmInputType.TEXT_FIELD],
+    ['caption', CmInputType.TEXT_FIELD],
+    ['color', CmInputType.COLOR_PICKER],
+    ['primaryColor', CmInputType.COLOR_PICKER],
+    ['secondaryColor', CmInputType.COLOR_PICKER],
   ]);
   private banner: CmBannerData;
 

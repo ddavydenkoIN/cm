@@ -3,7 +3,11 @@ import { RouterModule, Routes } from "@angular/router";
 import { environment } from "../environments/environment";
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: `${environment.headUrl}` },
+  {
+    path: "home",
+    pathMatch: "full",
+    loadChildren: () => import('./modules/pages/home-page/cm-home-page.module').then(mod => mod.CmHomePageModule)
+  },
   {
     path: 'banners',
     pathMatch: 'full',
@@ -14,7 +18,8 @@ const routes: Routes = [
     pathMatch: 'full',
     loadChildren: () => import('./modules/pages/playground-page/cm-playground-page.module').then(mod => mod.CmPlaygroundPageModule)
   },
-  { path: '**', loadChildren: () => import('./modules/pages/error-page/cm-error-page.module').then(mod => mod.CmErrorPageModule)}
+  { path: '', pathMatch: 'full', redirectTo: `${environment.headUrl}` },
+  //{ path: '**', loadChildren: () => import('./modules/pages/error-page/cm-error-page.module').then(mod => mod.CmErrorPageModule)}
 ];
 
 @NgModule({
